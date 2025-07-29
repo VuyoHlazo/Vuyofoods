@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H75EJ0XL0V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H75EJ0XL0V');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Made4u - Braai Meat Delivery</title>
@@ -14,21 +23,42 @@
     form input, form textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #555; background: #000; color: #fff; border-radius: 5px; }
     .notification { background: #4CAF50; color: #000; padding: 1rem; margin: 1rem 0; border-radius: 5px; white-space: pre-wrap; }
     #payWithOzow { background: #28a745; color: #fff; border: none; padding: 12px; font-size: 1.2rem; border-radius: 5px; cursor: pointer; width: 100%; }
-    
 body {
   background-image: url('images/nyama.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-
+    
   </style>
 </head>
 <body>
+    <nav style="background:#222; padding:10px; text-align:center;">
+  <a href="index.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">🥩 Made4u Meat</a>
+  <a href="zation2.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">🍾 Zation2 Alcohol</a>
+</nav>
+
+    <nav style="background:#222; padding:10px; text-align:center;">
+  <a href="index.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">🥩 Made4u Meat</a>
+  <a href="zation2.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">🍾 Zation2 Alcohol</a>
+</nav>
+
 
 <header>🔥 TasteBuds - Braai Meat Delivery 🔥</header>
+<section id="about" style="margin-top: 3rem; padding: 2rem; background: #1a1a1a; border-top: 2px solid #4CAF50; border-radius: 8px;">
+  <h2 style="color: #d4af37; font-size: 1.8rem; text-align: center;">
+  <a href="about.html" style="color: #d4af37; text-decoration: none;">About Us</a>
+</h2>
 
+  <p style="line-height: 1.6; font-size: 1rem; color: #ccc; text-align: center; max-width: 800px; margin: 0 auto;">
+    <section id="about" style="margin-top: 3rem; padding: 2rem; background: #1a1a1a; border-top: 2px solid #4CAF50; border-radius: 8px;">
+      
+  <p style="line-height: 1.6; font-size: 1rem; color: #ccc; text-align: center; max-width: 800px; margin: 0 auto;">
+    
+    
+</section>
+
+
+  
 <main>
   <!-- Product selection -->
   <section id="products">
@@ -36,13 +66,6 @@ body {
     <div class="product-card" onclick="addToCart('Beef')"><img src="images/beef.jpg"><div>Beef</div></div>
     <div class="product-card" onclick="addToCart('Pork')"><img src="images/pork.jpg"><div>Pork</div></div>
     <div class="product-card" onclick="addToCart('Sausage')"><img src="images/sausage.jpg"><div>Sausage</div></div>
-      <div class="product-card" style="cursor: default;" title="Display only">
-    <div class="product-card" style="cursor: default;" title="Display only">
-  <img src="images/nyama.png" alt="Nyama" style="object-fit: contain; height: 120px; background: #000;">
-  <div>iNyama (Display Only)</div>
-</div>
-
-    
     <div id="cartSummary" class="notification" style="display:none;"></div>
     <button id="checkoutBtn" onclick="showDelivery()" disabled>Next: Delivery Info</button>
   </section>
@@ -64,20 +87,6 @@ body {
     <div class="notification">✅ Payment successful! Order confirmation sent via email.</div>
     <button onclick="location.reload()">New Order</button>
   </section>
-  <section id="about" style="margin-top: 3rem; padding: 2rem; background: #1a1a1a; border-top: 2px solid #4CAF50; border-radius: 8px;">
-  <h2 style="color: #d4af37; font-size: 1.8rem; text-align: center;">About Us</h2>
-  <p style="line-height: 1.6; font-size: 1rem; color: #ccc; text-align: center; max-width: 800px; margin: 0 auto;">
-    <strong>TasteBuds</strong> is a proudly Langa-based braai meat delivery app created to bring convenience and quality to the local community. Whether you’re preparing for a quick weekend braai or a family gathering, we make it easier to order fresh meat from trusted local vendors.
-    <br><br>
-    The company was founded in March 2025 by two dedicated individuals with a shared passion for food, tech, and community upliftment. TasteBuds is still actively growing, with new features and products being added regularly to better serve our customers.
-    <br><br>
-    📧 <strong>Contact us:</strong> <a href="mailto:hlazoluvuyo@gmail.com" style="color: #4CAF50;">hlazoluvuyo@gmail.com</a>
-  </p>
-  <p style="text-align: center; color: #777; font-size: 0.9rem; margin-top: 2rem;">
-    &copy; 2025 TasteBuds. All rights reserved.
-  </p>
-</section>
-
 </main>
 
 <!-- EmailJS -->
@@ -137,6 +146,12 @@ body {
 
 </body>
 </html>
+
+
+
+
+
+
 
 
 
