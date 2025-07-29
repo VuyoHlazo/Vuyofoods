@@ -1,76 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H75EJ0XL0V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H75EJ0XL0V');
-</script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Made4u - Braai Meat Delivery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zation2 - Alcohol Delivery</title>
   <style>
-    body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
-    header { background: #d4af37; color: #000; padding: 1rem; text-align: center; font-size: 2rem; font-weight: bold; }
-    main { max-width: 900px; margin: 2rem auto; background: #111; padding: 2rem; border-radius: 8px; border: 4px solid #4CAF50; }
-    .product-card { background: #222; border: 2px solid #333; border-radius: 8px; text-align: center; padding: 1rem; margin: 1rem; display: inline-block; width: 28%; cursor: pointer; }
-    .product-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 5px; }
-    button { background: #d4af37; color: #000; border: none; padding: 12px 20px; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 1.1rem; margin: 10px auto; display: block; }
-    form input, form textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #555; background: #000; color: #fff; border-radius: 5px; }
-    .notification { background: #4CAF50; color: #000; padding: 1rem; margin: 1rem 0; border-radius: 5px; white-space: pre-wrap; }
-    #payWithOzow { background: #28a745; color: #fff; border: none; padding: 12px; font-size: 1.2rem; border-radius: 5px; cursor: pointer; width: 100%; }
-body {
-  background-image: url('images/nyama.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-    
+    body {
+      background: #fff8dc;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000;
+    }
+    header {
+      background: #000;
+      color: #fff8dc;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff3b0;
+      border-radius: 10px;
+      border: 3px solid #000;
+    }
+    h2 {
+      text-align: center;
+      color: #000;
+      margin-bottom: 1rem;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .product-card {
+      background: #fffacd;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      padding: 1rem;
+      margin: 1rem;
+      width: 250px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+      max-height: 180px;
+      border-radius: 5px;
+      object-fit: contain;
+    }
+    .product-card div {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #000;
+    }
+    button {
+      background: #000;
+      color: #fff8dc;
+      border: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin: 10px auto;
+      display: block;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #aaa;
+      background: #fff;
+      color: #000;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .notification {
+      background: #90ee90;
+      color: #000;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      font-size: 1rem;
+    }
+    #payWithOzow {
+      background: #28a745;
+      color: #fff;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .product-card {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-    <nav style="background:#222; padding:10px; text-align:center;">
-  <a href="index.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">🥩 Made4u Meat</a>
-  <a href="zation2.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">🍾 Zation2 Alcohol</a>
-</nav>
 
-    <nav style="background:#222; padding:10px; text-align:center;">
-  <a href="index.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">🥩 Made4u Meat</a>
-  <a href="zation2.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">🍾 Zation2 Alcohol</a>
-</nav>
+<header>🍾 Zation2 - Premium Alcohol Delivery 🍾</header>
 
-
-<header>🔥 TasteBuds - Braai Meat Delivery 🔥</header>
-<section id="about" style="margin-top: 3rem; padding: 2rem; background: #1a1a1a; border-top: 2px solid #4CAF50; border-radius: 8px;">
-  <h2 style="color: #d4af37; font-size: 1.8rem; text-align: center;">
-  <a href="about.html" style="color: #d4af37; text-decoration: none;">About Us</a>
-</h2>
-
-  <p style="line-height: 1.6; font-size: 1rem; color: #ccc; text-align: center; max-width: 800px; margin: 0 auto;">
-    <section id="about" style="margin-top: 3rem; padding: 2rem; background: #1a1a1a; border-top: 2px solid #4CAF50; border-radius: 8px;">
-      
-  <p style="line-height: 1.6; font-size: 1rem; color: #ccc; text-align: center; max-width: 800px; margin: 0 auto;">
-    
-    
-</section>
-
-
-  
 <main>
-  <!-- Product selection -->
   <section id="products">
-    <h2>Select Your Meat</h2>
-    <div class="product-card" onclick="addToCart('Beef')"><img src="images/beef.jpg"><div>Beef</div></div>
-    <div class="product-card" onclick="addToCart('Pork')"><img src="images/pork.jpg"><div>Pork</div></div>
-    <div class="product-card" onclick="addToCart('Sausage')"><img src="images/sausage.jpg"><div>Sausage</div></div>
+    <h2>Select Your Drinks</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="addToCart('Ballantines Blended 750ml', 250)">
+        <img src="images/ballantines blended 750m.jpg" alt="Ballantines">
+        <div>Ballantines R250</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Biscuit 750ml', 500)">
+        <img src="images/biscuit 750ml.jpg" alt="Biscuit">
+        <div>Biscuit R500</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Bombay 750ml', 500)">
+        <img src="images/bombay 750ml.jpg" alt="Bombay">
+        <div>Bombay R500</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Don Julio 750ml', 900)">
+        <img src="images/don julio 750ml.jpg" alt="Don Julio">
+        <div>Don Julio R900</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Gordon\'s 750ml', 170)">
+        <img src="images/gordon's 750ml.jpg" alt="Gordon's">
+        <div>Gordon's R170</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Grants 750ml', 200)">
+        <img src="images/grants 750 ml.jpg" alt="Grants">
+        <div>Grants R200</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Hennessy VS Cognac 750ml', 600)">
+        <img src="images/hennessy vs cognac 750ml.jpg" alt="Hennessy">
+        <div>Hennessy R600</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Jagermeister 750ml', 360)">
+        <img src="images/jagermeister 750ml.jpg" alt="Jagermeister">
+        <div>Jagermeister R360</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Jameson Blended 750ml', 350)">
+        <img src="images/jameson blended 750ml.jpg" alt="Jameson">
+        <div>Jameson R350</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Jameson Select Reserve 750ml', 550)">
+        <img src="images/jameson select reserve 750ml.jpg" alt="Jameson Reserve">
+        <div>Jameson Reserve R550</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Klipdrift Blended Brandy', 180)">
+        <img src="images/klipdrift blended brandy.jpg" alt="Klipdrift Blended">
+        <div>Klipdrift Blended R180</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Klipdrift Premium Brandy', 250)">
+        <img src="images/klipdrift premium brandy.jpg" alt="Klipdrift Premium">
+        <div>Klipdrift Premium R250</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Old Buck 750ml', 160)">
+        <img src="images/old buck.jpg" alt="Old Buck">
+        <div>Old Buck R160</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Red Bull 355ml', 25)">
+        <img src="images/red bull 355ml.jpg" alt="Red Bull">
+        <div>Red Bull R25</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Remy Martin 750ml', 900)">
+        <img src="images/remy martin 750ml.jpg" alt="Remy Martin">
+        <div>Remy Martin R900</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Tanqueray 750ml', 400)">
+        <img src="images/tanqueray 750ml.jpg" alt="Tanqueray">
+        <div>Tanqueray R400</div>
+      </div>
+    </div>
+
     <div id="cartSummary" class="notification" style="display:none;"></div>
     <button id="checkoutBtn" onclick="showDelivery()" disabled>Next: Delivery Info</button>
   </section>
 
-  <!-- Delivery form -->
   <section id="delivery" style="display:none;">
     <h2>Delivery Information</h2>
     <form id="orderForm">
@@ -82,7 +196,6 @@ body {
     </form>
   </section>
 
-  <!-- Confirmation screen -->
   <section id="confirmation" style="display:none;">
     <div class="notification">✅ Payment successful! Order confirmation sent via email.</div>
     <button onclick="location.reload()">New Order</button>
@@ -97,32 +210,36 @@ body {
   const cartSummary = document.getElementById("cartSummary");
   const checkoutBtn = document.getElementById("checkoutBtn");
 
-  function addToCart(item) {
-    let amt = prompt(`How much (R) to spend on ${item}?`, "100");
-    if (!amt) return;
-    amt = parseFloat(amt);
-    if (isNaN(amt) || amt < 1) return alert("Enter valid amount (>=R1)");
-    cart[item] = (cart[item]||0) + amt;
+  function addToCart(item, price) {
+    let qty = prompt(`How many bottles of ${item}?`, "1");
+    if (!qty) return;
+    qty = parseInt(qty);
+    if (isNaN(qty) || qty < 1) return alert("Enter valid quantity (1 or more)");
+    if (!cart[item]) cart[item] = { qty: 0, price };
+    cart[item].qty += qty;
     updateCartSummary();
   }
 
   function updateCartSummary() {
     let subtotal = 0, lines = [];
-    for (const [i,v] of Object.entries(cart)) { lines.push(`${i}: R${v.toFixed(2)}`); subtotal += v; }
-    const total = subtotal + DELIVERY_FEE;
-    cartSummary.textContent = `Order:\n${lines.join("\n")}\nSubtotal: R${subtotal.toFixed(2)}\nDelivery: R${DELIVERY_FEE}\nGrand Total: R${total.toFixed(2)}`;
+    for (const [name, { qty, price }] of Object.entries(cart)) {
+      const total = qty * price;
+      lines.push(`${name} x${qty} = R${total.toFixed(2)}`);
+      subtotal += total;
+    }
+    const grandTotal = subtotal + DELIVERY_FEE;
+    cartSummary.textContent = `Order:\n${lines.join("\n")}\nSubtotal: R${subtotal.toFixed(2)}\nDelivery: R${DELIVERY_FEE}\nGrand Total: R${grandTotal.toFixed(2)}`;
     cartSummary.style.display = "block";
     checkoutBtn.disabled = subtotal < 100;
   }
 
   function showDelivery() {
-    document.getElementById("products").style.display="none";
-    document.getElementById("delivery").style.display="block";
+    document.getElementById("products").style.display = "none";
+    document.getElementById("delivery").style.display = "block";
   }
 
   document.getElementById("payWithOzow").addEventListener("click", function(){
     alert("🔒 Redirecting to Ozow for payment... (demo)");
-    // Simulate success:
     sendOrderEmail();
   });
 
@@ -131,21 +248,24 @@ body {
     const phone = document.getElementById("phone").value.trim();
     const email = document.getElementById("email").value.trim();
     const address = document.getElementById("address").value.trim();
-    const subtotal = Object.values(cart).reduce((a,b)=>a+b,0);
+    const subtotal = Object.values(cart).reduce((sum, { qty, price }) => sum + qty * price, 0);
     const total = subtotal + DELIVERY_FEE;
-    const items = Object.entries(cart).map(([i,v])=>`${i}: R${v.toFixed(2)}`).join("\n");
+    const items = Object.entries(cart).map(([name, { qty, price }]) =>
+      `${name} x${qty} = R${(qty * price).toFixed(2)}`
+    ).join("\n");
 
     emailjs.send("service_w2w1iqn","template_jqxt9ay",{
-      name,phone,address,user_email:email, items, total: total.toString()
+      name, phone, address, user_email: email, items, total: total.toString()
     }).then(() => {
-      document.getElementById("delivery").style.display="none";
-      document.getElementById("confirmation").style.display="block";
-    }).catch(e=>{alert("Email failed");console.error(e)});
+      document.getElementById("delivery").style.display = "none";
+      document.getElementById("confirmation").style.display = "block";
+    }).catch(e => { alert("Email failed"); console.error(e); });
   }
 </script>
 
 </body>
 </html>
+
 
 
 
