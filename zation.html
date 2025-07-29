@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Made4u - Braai Meat Delivery</title>
+  <style>
+    body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+    header { background: #d4af37; color: #000; padding: 1rem; text-align: center; font-size: 2rem; font-weight: bold; }
+    main { max-width: 900px; margin: 2rem auto; background: #111; padding: 2rem; border-radius: 8px; border: 4px solid #4CAF50; }
+    .product-card { background: #222; border: 2px solid #333; border-radius: 8px; text-align: center; padding: 1rem; margin: 1rem; display: inline-block; width: 28%; cursor: pointer; }
+    .product-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 5px; }
+    button { background: #d4af37; color: #000; border: none; padding: 12px 20px; font-weight: bold; border-radius: 5px; cursor: pointer; font-size: 1.1rem; margin: 10px auto; display: block; }
+    form input, form textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #555; background: #000; color: #fff; border-radius: 5px; }
+    .notification { background: #4CAF50; color: #000; padding: 1rem; margin: 1rem 0; border-radius: 5px; white-space: pre-wrap; }
+    #payWithOzow { background: #28a745; color: #fff; border: none; padding: 12px; font-size: 1.2rem; border-radius: 5px; cursor: pointer; width: 100%; }
+    
+body {
+  background-image: url('images/nyama.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>🔥 TasteBuds - Braai Meat Delivery 🔥</header>
+
+<main>
+  <!-- Product selection -->
+  <section id="products">
+    <h2>Select Your Meat</h2>
+    <div class="product-card" onclick="addToCart('Beef')"><img src="images/beef.jpg"><div>Beef</div></div>
+    <div class="product-card" onclick="addToCart('Pork')"><img src="images/pork.jpg"><div>Pork</div></div>
+    <div class="product-card" onclick="addToCart('Sausage')"><img src="images/sausage.jpg"><div>Sausage</div></div>
+      <div class="product-card" style="cursor: default;" title="Display only">
+    <div class="product-card" style="cursor: default;" title="Display only">
+  <img src="images/nyama.png" alt="Nyama" style="object-fit: contain; height: 120px; background: #000;">
+  <div>iNyama (Display Only)</div>
+</div>
+
+    
+    <div id="cartSummary" class="notification" style="display:none;"></div>
+    <button id="checkoutBtn" onclick="showDelivery()" disabled>Next: Delivery Info</button>
+  </section>
+
+  <!-- Delivery form -->
+  <section id="delivery" style="display:none;">
+    <h2>Delivery Information</h2>
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <textarea id="address" placeholder="Delivery Address (Langa etc)" required></textarea>
+      <button type="button" id="payWithOzow">Pay with Ozow</button>
+    </form>
+  </section>
+
+  <!-- Confirmation screen -->
+  <section id="confirmation" style="display:none;">
+    <div class="notification">✅ Payment successful! Order confirmation sent via email.</div>
+    <button onclick="location.reload()">New Order</button>
+  </section>
+  <section id="about" style="margin-top: 3rem; padding: 2rem; background: #1a1a1a; border-top: 2px solid #4CAF50; border-radius: 8px;">
+  <h2 style="color: #d4af37; font-size: 1.8rem; text-align: center;">About Us</h2>
+  <p style="line-height: 1.6; font-size: 1rem; color: #ccc; text-align: center; max-width: 800px; margin: 0 auto;">
+    <strong>TasteBuds</strong> is a proudly Langa-based braai meat delivery app created to bring convenience and quality to the local community. Whether you’re preparing for a quick weekend braai or a family gathering, we make it easier to order fresh meat from trusted local vendors.
+    <br><br>
+    The company was founded in March 2025 by two dedicated individuals with a shared passion for food, tech, and community upliftment. TasteBuds is still actively growing, with new features and products being added regularly to better serve our customers.
+    <br><br>
+    📧 <strong>Contact us:</strong> <a href="mailto:hlazoluvuyo@gmail.com" style="color: #4CAF50;">hlazoluvuyo@gmail.com</a>
+  </p>
+  <p style="text-align: center; color: #777; font-size: 0.9rem; margin-top: 2rem;">
+    &copy; 2025 TasteBuds. All rights reserved.
+  </p>
+</section>
+
+</main>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("EKapt1H2FKQ_IbQYA");
+  const cart = {}, DELIVERY_FEE = 25;
+  const cartSummary = document.getElementById("cartSummary");
+  const checkoutBtn = document.getElementById("checkoutBtn");
+
+  function addToCart(item) {
+    let amt = prompt(`How much (R) to spend on ${item}?`, "100");
+    if (!amt) return;
+    amt = parseFloat(amt);
+    if (isNaN(amt) || amt < 1) return alert("Enter valid amount (>=R1)");
+    cart[item] = (cart[item]||0) + amt;
+    updateCartSummary();
+  }
+
+  function updateCartSummary() {
+    let subtotal = 0, lines = [];
+    for (const [i,v] of Object.entries(cart)) { lines.push(`${i}: R${v.toFixed(2)}`); subtotal += v; }
+    const total = subtotal + DELIVERY_FEE;
+    cartSummary.textContent = `Order:\n${lines.join("\n")}\nSubtotal: R${subtotal.toFixed(2)}\nDelivery: R${DELIVERY_FEE}\nGrand Total: R${total.toFixed(2)}`;
+    cartSummary.style.display = "block";
+    checkoutBtn.disabled = subtotal < 100;
+  }
+
+  function showDelivery() {
+    document.getElementById("products").style.display="none";
+    document.getElementById("delivery").style.display="block";
+  }
+
+  document.getElementById("payWithOzow").addEventListener("click", function(){
+    alert("🔒 Redirecting to Ozow for payment... (demo)");
+    // Simulate success:
+    sendOrderEmail();
+  });
+
+  function sendOrderEmail(){
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const subtotal = Object.values(cart).reduce((a,b)=>a+b,0);
+    const total = subtotal + DELIVERY_FEE;
+    const items = Object.entries(cart).map(([i,v])=>`${i}: R${v.toFixed(2)}`).join("\n");
+
+    emailjs.send("service_w2w1iqn","template_jqxt9ay",{
+      name,phone,address,user_email:email, items, total: total.toString()
+    }).then(() => {
+      document.getElementById("delivery").style.display="none";
+      document.getElementById("confirmation").style.display="block";
+    }).catch(e=>{alert("Email failed");console.error(e)});
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
