@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms and Conditions | Buddy9Nine</title>
+  <style>
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px 80px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #c62828;
+      margin-top: 40px;
+      border-bottom: 2px solid #c62828;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin: 15px 0;
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 15px 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 60px;
+      right: 20px;
+      background-color: #c62828;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    #backToTop:hover {
+      background-color: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Buddy9Nine – Terms and Conditions</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Introduction</h2>
+      <p>Welcome to <strong>Buddy9Nine</strong> (www.buddy9nine.co.za). By using our website, you agree to comply with and be bound by these Terms and Conditions. Please review them carefully before placing any orders.</p>
+
+      <h2>2. Use of Website</h2>
+      <p>By accessing or using our website, you confirm that you are at least 18 years old and will use this site lawfully. You agree not to engage in any activity that may damage or disrupt the website or services.</p>
+
+      <h2>3. Orders and Payments</h2>
+      <p>Orders can be placed online using our secure checkout process. All prices are listed in South African Rand (ZAR). The minimum order value is R100, and a flat delivery fee of R25 applies to all orders.</p>
+
+      <h2>4. Delivery</h2>
+      <p>Deliveries are available within Langa and selected Cape Town areas. We aim to deliver within 1–2 hours of order confirmation, depending on vendor and location.</p>
+
+      <h2>5. Returns and Refunds</h2>
+      <p>As our products are perishable, returns are only accepted in cases where incorrect or damaged items are delivered. Please refer to our <a href="returns.html">Returns Policy</a> for full details.</p>
+
+      <h2>6. Privacy</h2>
+      <p>Your privacy is important to us. Please see our <a href="privacy.html">Privacy Policy</a> to learn how we handle your personal information.</p>
+
+      <h2>7. Contact</h2>
+      <p>If you have any questions about these Terms, please contact us at:
+      <br><strong>Email:</strong> info@buddy9nine.co.za
+      <br><strong>Phone:</strong> 0657128777</p>
+
+      <h2>8. Last Updated</h2>
+      <p>These Terms and Conditions were last updated on <strong>20 October 2025</strong>.</p>
+    </section>
+  </main>
+
+  <button id="backToTop" title="Back to top">↑</button>
+
+  <footer>
+    &copy; 2025 Buddy9Nine. All rights reserved.
+  </footer>
+
+  <script>
+    const btn = document.getElementById("backToTop");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    btn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
