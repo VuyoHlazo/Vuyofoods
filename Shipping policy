@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shipping Policy — Buddy9Nine Deliveries</title>
+  <meta name="description" content="Buddy9Nine Deliveries — Shipping policy for Langa. Fast 60 minute delivery, delivery fee, hours, contact and returns." />
+  <style>
+    :root{
+      --bg:#000;
+      --panel:#111;
+      --accent:#d4af37;
+      --muted:#ccc;
+      --green:#4CAF50;
+    }
+    body{background:var(--bg); color:#fff; font-family:Segoe UI, system-ui, Arial; margin:0; padding:0;}
+    header{background:var(--accent); color:#000; padding:1rem; text-align:center; font-weight:700;}
+    main{max-width:900px; margin:2rem auto; padding:1.75rem; background:var(--panel); border-radius:8px; border:4px solid var(--green);}
+    h1{color:var(--accent); margin-top:0;}
+    h2{color:#fff; font-size:1.05rem; margin-bottom:.25rem;}
+    p{color:var(--muted); line-height:1.6;}
+    .note{background:#222; border-left:4px solid var(--accent); padding:0.75rem; border-radius:5px; margin:1rem 0;}
+    ul{color:var(--muted); margin-left:1.25rem;}
+    .contact{background:rgba(212,175,55,0.07); padding:0.75rem; border-radius:6px; color:#fff; margin-top:1rem;}
+    footer{max-width:900px; margin:1.25rem auto 3rem; padding:1rem; text-align:center; color:#aaa;}
+    a{color:var(--accent); text-decoration:none;}
+  </style>
+</head>
+<body>
+  <header>🔥 Buddy9Nine — Shipping Policy 🔥</header>
+
+  <main>
+    <h1>Shipping Policy</h1>
+    <p>This Shipping Policy explains how Buddy9Nine delivers orders inside <strong>Langa</strong>. We aim to provide a fast, reliable, and safe delivery experience.</p>
+
+    <section>
+      <h2>Delivery Area</h2>
+      <p>We currently deliver <strong>only within Langa</strong>. If your address is outside Langa, you will be notified during checkout and we will advise on alternative collection or delivery arrangements.</p>
+    </section>
+
+    <section>
+      <h2>Delivery Time</h2>
+      <p>Our target delivery time is <strong>60 minutes</strong> from the moment payment is confirmed. This applies to orders placed during our delivery hours and when items are in stock.</p>
+      <div class="note">
+        <strong>Note:</strong> Delivery time may increase due to heavy demand, severe weather, road closures, or other events outside our control. We will notify you by SMS or WhatsApp if a delay is expected.
+      </div>
+    </section>
+
+    <section>
+      <h2>Delivery Hours</h2>
+      <ul>
+        <li>Monday – Sunday: <strong>09:00 → 21:00</strong> (last order accepted at 20:00).</li>
+        <li>Public holidays: limited service — check our website or contact support.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Delivery Fee & Minimum Order</h2>
+      <ul>
+        <li><strong>Delivery fee:</strong> R25 per order (flat rate within Langa).</li>
+        <li><strong>Minimum order value:</strong> R100 before checkout (items only; delivery fee is added after).</li>
+      </ul>
+      <p>If your order does not meet the minimum, you will be asked to add more items or collect from the vendor instead.</p>
+    </section>
+
+    <section>
+      <h2>How We Deliver</h2>
+      <p>Our drivers follow local safety and hygiene guidelines. Orders are prepared, packaged, and handed directly to the recipient at the delivery address. If no one is available to accept the order we will:</p>
+      <ul>
+        <li>Attempt to contact the phone number provided.</li>
+        <li>If not reachable, attempt a second delivery within a reasonable time window.</li>
+        <li>If delivery cannot be completed, the order may be returned to base and additional fees may apply for re-delivery.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Incorrect Address or Contact</h2>
+      <p>Please ensure your delivery address and phone number are correct at checkout. If you provide an incorrect address or we cannot reach you, delivery may be delayed or cancelled and additional fees may apply.</p>
+    </section>
+
+    <section>
+      <h2>Refunds, Missing or Damaged Items</h2>
+      <ul>
+        <li>If an item arrives damaged or incorrect, contact us immediately within <strong>2 hours</strong> of delivery with photos and a brief description.</li>
+        <li>We will review and, where appropriate, offer a replacement, partial refund, or full refund depending on the situation.</li>
+        <li>Perishable goods handled incorrectly by the customer after delivery are not eligible for refunds.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Payment & Confirmation</h2>
+      <p>We accept the payment methods listed on our site (e.g. Ozow demo). Orders are dispatched only after payment is confirmed. You will receive an order confirmation by email or SMS with your order summary and estimated delivery time.</p>
+    </section>
+
+    <section>
+      <h2>Contact & Support</h2>
+      <div class="contact">
+        <p><strong>WhatsApp / Phone:</strong> 065 712 8777</p>
+        <p><strong>Email:</strong> <a href="mailto:hlazoluvuyo@gmail.com">hlazoluvuyo@gmail.com</a></p>
+        <p>Please include your order number and a short description when you contact us — it helps us resolve issues faster.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Shipping Policy periodically. The latest version will always be published at <a href="https://www.buddy9nine.co.za/shipping.html">https://www.buddy9nine.co.za/shipping.html</a>. By placing an order, you agree to the terms in the current policy.</p>
+    </section>
+
+    <p style="margin-top:1.5rem; color:var(--muted)">Last updated: <strong>1 November 2025</strong></p>
+  </main>
+
+  <footer>
+    <p>© 2025 Buddy9Nine Deliveries. <a href="terms-and-conditions.html">Terms</a> | <a href="privacy.html">Privacy</a></p>
+  </footer>
+</body>
+</html>
