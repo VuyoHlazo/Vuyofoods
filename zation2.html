@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zation2 - Alcohol Delivery</title>
+  <title>Zation2 - Alcohol & Nomzamo Butchery Delivery</title>
   <style>
     body {
       background: #fff8dc;
@@ -109,77 +109,12 @@
 </head>
 <body>
 
-<header>🍾 Zation2 - Premium Alcohol Delivery 🍾</header>
+<header>🍾 Zation2 & Nomzamo Butchery Delivery 🍖</header>
 
 <main>
   <section id="products">
-    <h2>Select Your Drinks</h2>
-    <div class="product-grid">
-      <div class="product-card" onclick="addToCart('Ballantines Blended 750ml', 250)">
-        <img src="images/ballantines blended 750m.jpg" alt="Ballantines">
-        <div>Ballantines R250</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Biscuit 750ml', 500)">
-        <img src="images/biscuit 750ml.jpg" alt="Biscuit">
-        <div>Biscuit R500</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Bombay 750ml', 500)">
-        <img src="images/bombay 750ml.jpg" alt="Bombay">
-        <div>Bombay R500</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Don Julio 750ml', 900)">
-        <img src="images/don julio 750ml.jpg" alt="Don Julio">
-        <div>Don Julio R900</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Gordon\'s 750ml', 170)">
-        <img src="images/gordon's 750ml.jpg" alt="Gordon's">
-        <div>Gordon's R170</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Grants 750ml', 200)">
-        <img src="images/grants 750 ml.jpg" alt="Grants">
-        <div>Grants R200</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Hennessy VS Cognac 750ml', 600)">
-        <img src="images/Hennessy vs cognac 750ml.jpg" alt="Hennessy">
-        <div>Hennessy R600</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Jagermeister 750ml', 360)">
-        <img src="images/jagermeister 750ml.jpg" alt="Jagermeister">
-        <div>Jagermeister R360</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Jameson Blended 750ml', 350)">
-        <img src="images/jameson blended 750ml.jpg" alt="Jameson">
-        <div>Jameson R350</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Jameson Select Reserve 750ml', 550)">
-        <img src="images/jameson select reserve 750ml.jpg" alt="Jameson Reserve">
-        <div>Jameson Reserve R550</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Klipdrift Blended Brandy', 180)">
-        <img src="images/klipdrift blended brandy.jpg" alt="Klipdrift Blended">
-        <div>Klipdrift Blended R180</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Klipdrift Premium Brandy', 250)">
-        <img src="images/klipdrift premium brandy.jpg" alt="Klipdrift Premium">
-        <div>Klipdrift Premium R250</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Old Buck 750ml', 160)">
-        <img src="images/old buck.jpg" alt="Old Buck">
-        <div>Old Buck R160</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Red Bull 355ml', 25)">
-        <img src="images/red bull 355ml.jpg" alt="Red Bull">
-        <div>Red Bull R25</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Remy Martin 750ml', 900)">
-        <img src="images/remy martin 750ml.jpg" alt="Remy Martin">
-        <div>Remy Martin R900</div>
-      </div>
-      <div class="product-card" onclick="addToCart('Tanqueray 750ml', 400)">
-        <img src="images/tanqueray 750ml.jpg" alt="Tanqueray">
-        <div>Tanqueray R400</div>
-      </div>
-    </div>
+    <h2>Products</h2>
+    <div class="product-grid" id="productGrid"></div>
 
     <div id="cartSummary" class="notification" style="display:none;"></div>
     <button id="checkoutBtn" onclick="showDelivery()" disabled>Next: Delivery Info</button>
@@ -205,80 +140,98 @@
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  emailjs.init("EKapt1H2FKQ_IbQYA");
-  const cart = {}, DELIVERY_FEE = 25;
-  const cartSummary = document.getElementById("cartSummary");
-  const checkoutBtn = document.getElementById("checkoutBtn");
+emailjs.init("EKapt1H2FKQ_IbQYA");
 
-  function addToCart(item, price) {
-    let qty = prompt(`How many bottles of ${item}?`, "1");
-    if (!qty) return;
-    qty = parseInt(qty);
-    if (isNaN(qty) || qty < 1) return alert("Enter valid quantity (1 or more)");
-    if (!cart[item]) cart[item] = { qty: 0, price };
-    cart[item].qty += qty;
-    updateCartSummary();
+// ======= Cart Logic =======
+const cart = {};
+const DELIVERY_FEE = 25;
+const cartSummary = document.getElementById("cartSummary");
+const checkoutBtn = document.getElementById("checkoutBtn");
+
+// ======= Nomzamo Products =======
+const products = [
+  {name:"Braai Meat Platter", price:300, img:"images/Braaimeat.jpg"},
+  {name:"Ribs", price:100, img:"images/ribs.jpg"},
+  {name:"Beef", price:150, img:"images/beef.jpg"},
+  {name:"Beef Fat", price:80, img:"images/beeffat.jpg"},
+  {name:"Beef Liver", price:90, img:"images/beefliver.jpg"},
+  {name:"Chicken Feet", price:50, img:"images/chickenfeet.jpg"},
+  {name:"Chicken Wings", price:70, img:"images/chickenwings.jpg"},
+  {name:"Cow Tripe", price:60, img:"images/cowtripe.jpg"},
+  {name:"Pork", price:120, img:"images/pork.jpg"}
+];
+
+// ======= Render Products =======
+const productGrid = document.getElementById("productGrid");
+products.forEach(p=>{
+  const card = document.createElement("div");
+  card.className="product-card";
+  card.innerHTML = `<img src="${p.img}" alt="${p.name}"><div>${p.name}<br>Starting R${p.price}</div>`;
+  card.onclick = ()=>{ addToCart(p); };
+  productGrid.appendChild(card);
+});
+
+// ======= Add to Cart =======
+function addToCart(product){
+  let input = prompt(`Enter price for ${product.name} (min R${product.price}):`, product.price);
+  if(!input) return;
+  let price = parseInt(input);
+  if(isNaN(price) || price < product.price) return alert("Invalid price!");
+  let qty = prompt(`How many ${product.name}?`, "1");
+  if(!qty) return;
+  qty = parseInt(qty);
+  if(isNaN(qty) || qty < 1) return alert("Invalid quantity!");
+  if(!cart[product.name]) cart[product.name] = { qty:0, price };
+  cart[product.name].qty += qty;
+  cart[product.name].price = price; // update to chosen price
+  updateCartSummary();
+}
+
+// ======= Update Cart =======
+function updateCartSummary(){
+  let subtotal = 0;
+  let lines = [];
+  for(const [name,{qty,price}] of Object.entries(cart)){
+    const total = qty*price;
+    lines.push(`${name} x${qty} = R${total}`);
+    subtotal += total;
   }
+  const grandTotal = subtotal + DELIVERY_FEE;
+  cartSummary.textContent = `Order:\n${lines.join("\n")}\nSubtotal: R${subtotal}\nDelivery: R${DELIVERY_FEE}\nGrand Total: R${grandTotal}`;
+  cartSummary.style.display="block";
+  checkoutBtn.disabled = subtotal<100;
+}
 
-  function updateCartSummary() {
-    let subtotal = 0, lines = [];
-    for (const [name, { qty, price }] of Object.entries(cart)) {
-      const total = qty * price;
-      lines.push(`${name} x${qty} = R${total.toFixed(2)}`);
-      subtotal += total;
-    }
-    const grandTotal = subtotal + DELIVERY_FEE;
-    cartSummary.textContent = `Order:\n${lines.join("\n")}\nSubtotal: R${subtotal.toFixed(2)}\nDelivery: R${DELIVERY_FEE}\nGrand Total: R${grandTotal.toFixed(2)}`;
-    cartSummary.style.display = "block";
-    checkoutBtn.disabled = subtotal < 100;
-  }
+// ======= Delivery Section =======
+function showDelivery(){
+  document.getElementById("products").style.display="none";
+  document.getElementById("delivery").style.display="block";
+}
 
-  function showDelivery() {
-    document.getElementById("products").style.display = "none";
-    document.getElementById("delivery").style.display = "block";
-  }
+// ======= Ozow Payment =======
+document.getElementById("payWithOzow").addEventListener("click",function(){
+  alert("🔒 Redirecting to Ozow for payment... (demo)");
+  sendOrderEmail();
+});
 
-  document.getElementById("payWithOzow").addEventListener("click", function(){
-    alert("🔒 Redirecting to Ozow for payment... (demo)");
-    sendOrderEmail();
-  });
+// ======= Send Email =======
+function sendOrderEmail(){
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const subtotal = Object.values(cart).reduce((sum,{qty,price})=>sum+qty*price,0);
+  const total = subtotal + DELIVERY_FEE;
+  const items = Object.entries(cart).map(([name,{qty,price}])=>`${name} x${qty} = R${qty*price}`).join("\n");
 
-  function sendOrderEmail(){
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const address = document.getElementById("address").value.trim();
-    const subtotal = Object.values(cart).reduce((sum, { qty, price }) => sum + qty * price, 0);
-    const total = subtotal + DELIVERY_FEE;
-    const items = Object.entries(cart).map(([name, { qty, price }]) =>
-      `${name} x${qty} = R${(qty * price).toFixed(2)}`
-    ).join("\n");
-
-    emailjs.send("service_w2w1iqn","template_jqxt9ay",{
-      name, phone, address, user_email: email, items, total: total.toString()
-    }).then(() => {
-      document.getElementById("delivery").style.display = "none";
-      document.getElementById("confirmation").style.display = "block";
-    }).catch(e => { alert("Email failed"); console.error(e); });
-  }
+  emailjs.send("service_w2w1iqn","template_jqxt9ay",{
+    name, phone, address, user_email: email, items, total: total.toString()
+  }).then(()=>{
+    document.getElementById("delivery").style.display="none";
+    document.getElementById("confirmation").style.display="block";
+  }).catch(e=>{ alert("Email failed"); console.error(e); });
+}
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
